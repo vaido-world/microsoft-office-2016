@@ -57,3 +57,5 @@ Office16ProPlusR_Trial2
 
 Language accessory pack download link: https://support.office.com/en-us/article/language-accessory-pack-for-office-82ee1236-0f9a-45ee-9c72-05b026ee809f
 
+### Screenshot showing the breakpoint for causality of Language accessory pack error
+![asda](https://github.com/BoQsc/microsoft-office-2016/blob/BoQsc-patch-1/reverse-engineering/Screenshot%20showing%20the%20breakpoint%20for%20causality%20of%20Language%20accessory%20pack%20error.png)
