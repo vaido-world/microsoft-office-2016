@@ -7,6 +7,10 @@ C:\Program Files\Microsoft Office\root\Licenses16
 Source: https://forums.mydigitallife.net/threads/office-2016-vl-to-retail.65654/
 
 
+### OSPP activation status can be found here
+```
+cscript "C:\Program Files\Microsoft Office\Office16\OSPP.VBS" /dstatus"
+```
 
 ### Licenses installed after web-install
 ```
