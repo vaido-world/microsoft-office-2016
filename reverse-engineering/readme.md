@@ -6,6 +6,13 @@ C:\Program Files\Microsoft Office\root\Licenses16
 
 Source: https://forums.mydigitallife.net/threads/office-2016-vl-to-retail.65654/
 
+### Licenses can be installed this way
+```
+cleanospp.exe
+
+for /f "delims=" %i in ('dir /b /on *.xrm-ms') do (cscript //Nologo %windir%\System32\slmgr.vbs /ilc %i)
+```
+
 
 ### OSPP activation status can be found here
 ```
