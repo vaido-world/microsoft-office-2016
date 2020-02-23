@@ -12,6 +12,13 @@ Source: https://forums.mydigitallife.net/threads/office-2016-vl-to-retail.65654/
 cscript "C:\Program Files\Microsoft Office\Office16\OSPP.VBS" /dstatus"
 ```
 
+### OSPP rearm is executed this way
+```
+cscript "C:\Program Files\Microsoft Office\Office16\OSPP.VBS" /rearm"
+```
+
+
+
 ### Licenses installed after web-install
 ```
 
