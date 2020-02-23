@@ -48,7 +48,10 @@ Office16ProPlusR_Trial2
 ```
 
 
+## Installing Language accessory pack
+https://support.office.com/en-us/article/language-accessory-pack-for-office-82ee1236-0f9a-45ee-9c72-05b026ee809f
 ### The cause of this error is still unsure, but happens after conversion from WEB-Installed Office (Retail) to Volume
 ![Screenshot](./Screenshot.png)
+* Install Display language packs before Activation
 
 
