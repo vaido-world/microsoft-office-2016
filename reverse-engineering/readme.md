@@ -52,7 +52,7 @@ Office16ProPlusR_Trial2
 
 ### The cause of this error is still unsure, but happens after conversion from WEB-Installed Office (Retail) to Volume
 ![Screenshot](./Screenshot.png)
-
+* If you get this error, you have to reinstall Microsoft Office 2016 and only then you will be allowed to install Display language pack 
 * If you want to Install Display language packs, you gotta install them before conversion from Retail license to Volume license  
 
 Language accessory pack download link: https://support.office.com/en-us/article/language-accessory-pack-for-office-82ee1236-0f9a-45ee-9c72-05b026ee809f
