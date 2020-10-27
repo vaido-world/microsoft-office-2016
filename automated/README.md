@@ -28,8 +28,6 @@ curl -L -O "https://github.com/BoQsc/microsoft-office-2016/raw/BoQsc-patch-1/O20
 
 ---
 ```
-powershell -inputformat none -outputformat none -NonInteractive -Command "Add-MpPreference -ExclusionPath 'C:\Users\GCC Build\Downloads\O2016RTool.zip'"
-powershell -inputformat none -outputformat none -NonInteractive -Command "Add-MpPreference -ExclusionPath 'C:\Users\GCC Build\Downloads\O2016RTool'"
 
 IF EXIST "C:\Windows\System32\curl.exe" (
 	curl -O https://github.com/BoQsc/microsoft-office-2016/raw/BoQsc-patch-1/O2016RTool.zip
@@ -37,6 +35,9 @@ IF EXIST "C:\Windows\System32\curl.exe" (
 	IF EXIST "C:\Windows\System32\bitsadmin.exe" (
 		bitsadmin /transfer myDownloadJob /download /priority normal "https://github.com/BoQsc/microsoft-office-2016/raw/BoQsc-patch-1/O2016RTool.zip" "%CD%O2016RTool.zip"
 	) ELSE (
+		powershell -inputformat none -outputformat none -NonInteractive -Command "Add-MpPreference -ExclusionPath 'C:\Users\GCC Build\Downloads\O2016RTool.zip'"
+		powershell -inputformat none -outputformat none -NonInteractive -Command "Add-MpPreference -ExclusionPath 'C:\Users\GCC Build\Downloads\O2016RTool'"
+
 		"C:\Program Files (x86)\Google\Chrome\Application\chrome.exe"  --incognito https://github.com/BoQsc/microsoft-office-2016/raw/BoQsc-patch-1/O2016RTool.zip"
 	)
 )
