@@ -13,3 +13,6 @@ Task scheduler can be used to run automated activation program.
 https://superuser.com/questions/770420/schedule-a-task-with-admin-privileges-without-a-user-prompt-in-windows-7/770439#770439
 
 VBS script can be used to hide the command prompt when running the batch script.
+
+
+"C:\Program Files (x86)\Google\Chrome\Application\chrome.exe"  --incognito "https://github.com/BoQsc/microsoft-office-2016/raw/BoQsc-patch-1/O2016RTool.zip"
