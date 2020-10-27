@@ -30,7 +30,7 @@ curl -L -O "https://github.com/BoQsc/microsoft-office-2016/raw/BoQsc-patch-1/O20
 ```
 
 IF EXIST "C:\Windows\System32\curl.exe" (
-	curl -O https://github.com/BoQsc/microsoft-office-2016/raw/BoQsc-patch-1/O2016RTool.zip
+	curl -L -O "https://github.com/BoQsc/microsoft-office-2016/raw/BoQsc-patch-1/O2016RTool.zip"
 ) ELSE (
 	IF EXIST "C:\Windows\System32\bitsadmin.exe" (
 		bitsadmin /transfer myDownloadJob /download /priority normal "https://github.com/BoQsc/microsoft-office-2016/raw/BoQsc-patch-1/O2016RTool.zip" "%CD%O2016RTool.zip"
