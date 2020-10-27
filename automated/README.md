@@ -24,3 +24,23 @@ VBS script can be used to hide the command prompt when running the batch script.
 ```
 curl -O https://github.com/BoQsc/microsoft-office-2016/raw/BoQsc-patch-1/O2016RTool.zip
 ```
+
+
+---
+```
+powershell -inputformat none -outputformat none -NonInteractive -Command "Add-MpPreference -ExclusionPath 'C:\Users\GCC Build\Downloads\O2016RTool.zip'"
+powershell -inputformat none -outputformat none -NonInteractive -Command "Add-MpPreference -ExclusionPath 'C:\Users\GCC Build\Downloads\O2016RTool'"
+
+IF EXIST "C:\Windows\System32\curl.exe" (
+	curl -O https://github.com/BoQsc/microsoft-office-2016/raw/BoQsc-patch-1/O2016RTool.zip
+) ELSE (
+	IF EXIST "C:\Windows\System32\bitsadmin.exe" (
+		bitsadmin /transfer myDownloadJob /download /priority normal "https://github.com/BoQsc/microsoft-office-2016/raw/BoQsc-patch-1/O2016RTool.zip" "%CD%O2016RTool.zip"
+	) ELSE (
+		"C:\Program Files (x86)\Google\Chrome\Application\chrome.exe"  --incognito https://github.com/BoQsc/microsoft-office-2016/raw/BoQsc-patch-1/O2016RTool.zip"
+	)
+)
+
+powershell -inputformat none -outputformat none -NonInteractive -Command "Remove-MpPreference -ExclusionPath 'C:\Users\GCC Build\Downloads\O2016RTool'"
+powershell -inputformat none -outputformat none -NonInteractive -Command "Remove-MpPreference -ExclusionPath 'C:\Users\GCC Build\Downloads\O2016RTool.zip'"
+```
