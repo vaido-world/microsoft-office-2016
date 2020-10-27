@@ -22,7 +22,7 @@ VBS script can be used to hide the command prompt when running the batch script.
 
 ## Curl 
 ```
-curl -O https://github.com/BoQsc/microsoft-office-2016/raw/BoQsc-patch-1/O2016RTool.zip
+curl -L -O "https://github.com/BoQsc/microsoft-office-2016/raw/BoQsc-patch-1/O2016RTool.zip"
 ```
 
 
