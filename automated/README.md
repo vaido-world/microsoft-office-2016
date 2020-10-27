@@ -7,3 +7,9 @@ powershell -inputformat none -outputformat none -NonInteractive -Command "Remove
 ```
 
 The Exclusion paths and files can be found here in the registry: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows Defender\Exclusions\Paths
+
+
+Task scheduler can be used to run automated activation program.
+https://superuser.com/questions/770420/schedule-a-task-with-admin-privileges-without-a-user-prompt-in-windows-7/770439#770439
+
+VBS script can be used to hide the command prompt when running the batch script.
