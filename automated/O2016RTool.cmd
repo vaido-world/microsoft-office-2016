@@ -994,7 +994,7 @@
 	wmic path %ospp% where ID="%1" call ClearKeyManagementServiceMachine >nul 2>&1
 	wmic path %ospp% where ID="%1" call ClearKeyManagementServicePort >nul 2>&1
 	)
-	if %GraceMin% EQU 259200 (echo Activation successful) else (echo Activation failed)
+	if %GraceMin% EQU 259200 (echo Activation successful && GOTO :TheEndIsNear) else (echo Activation failed)
 	echo __________________________________________________________________
 	goto:eof
 :================================================================================================================
@@ -1215,7 +1215,7 @@
 	goto:eof
 :================================================================================================================
 ::===============================================================================================================
-:TheEndIsNear
+:
 	endlocal
     echo:
 	echo:
