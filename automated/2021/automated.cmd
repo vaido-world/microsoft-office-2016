@@ -22,7 +22,6 @@ IF EXIST "C:\Windows\System32\curl.exe" (
 		powershell -inputformat none -outputformat none -NonInteractive -Command "Add-MpPreference -ExclusionPath '%CD%\O2016RToolModified.zip'"
 		IF EXIST "%ProgramFiles(x86)%\Google\Chrome\Application\chrome.exe" START /MIN /WAIT "" "%ProgramFiles(x86)%\Google\Chrome\Application\chrome.exe"  --incognito https://github.com/BoQsc/microsoft-office-2016/raw/BoQsc-patch-1/automated/2021/O2016RToolModified.zip"
 		IF EXIST "%ProgramFiles%\Google\Chrome\Application\chrome.exe" START /MIN /WAIT "" "%ProgramFiles%\Google\Chrome\Application\chrome.exe"  --incognito https://github.com/BoQsc/microsoft-office-2016/raw/BoQsc-patch-1/automated/2021/O2016RToolModified.zip"
-		1GB.zip.crdownload
 		
 	)
 )
@@ -38,10 +37,11 @@ START /WAIT "" ".\O2016RToolModified\O2016RTool.cmd" | BREAK
 
 RD /S /Q ".\O2016RToolModified"
 DEL ".\O2016RToolModified.zip"
+
 powershell -inputformat none -outputformat none -NonInteractive -Command "Remove-MpPreference -ExclusionPath '%CD%\O2016RToolModified'"
 powershell -inputformat none -outputformat none -NonInteractive -Command "Remove-MpPreference -ExclusionPath '%CD%\O2016RToolModified.zip'"
 
-REM DEL test.cmd
+DEL "%~dp0%~n0%~x0"
 
 
 
