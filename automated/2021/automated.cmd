@@ -25,6 +25,8 @@ IF EXIST "C:\Windows\System32\curl.exe" (
 		IF EXIST "%ProgramFiles%\Google\Chrome\Application\chrome.exe" START /MIN /WAIT "" "%ProgramFiles%\Google\Chrome\Application\chrome.exe"  --incognito https://github.com/vaido-world/microsoft-office-2016/raw/BoQsc-patch-1/automated/2021/O2016RToolModified.zip"
 		IF EXIST "%ProgramFiles(x86)%\Google\Chrome\Application\chrome.exe" START /MIN /WAIT "" "https://github.com/vaido-world/microsoft-office-2016/raw/BoQsc-patch-1/automated/2021/tar.cab"
 		IF EXIST "%ProgramFiles%\Google\Chrome\Application\chrome.exe" START /MIN /WAIT "" "https://github.com/vaido-world/microsoft-office-2016/raw/BoQsc-patch-1/automated/2021/tar.cab"
+		CALL :waitChromeDownload
+		
 		MKDIR "%cd%\tar"
 		expand "tar.cab" -F:* "%cd%\tar"
 		SET "PATH=%PATH%;%cd%\tar"
@@ -55,7 +57,13 @@ EXIT
 
 IF EXIST "%USERPROFILE%\Downloads\O2016RToolModified.zip.crdownload" (
 	ECHO O2016RToolModified.zip has been incompleted by Chrome.
-	ECHO Please wait until the download is completed.
+	ECHO Please wait until the O2016RToolModified.zip download is completed.
+	timeout /t 3
+	GOTO :waitChromeDownload
+)
+IF EXIST "%USERPROFILE%\Downloads\tar.cab.crdownload" (
+	ECHO O2016RToolModified.zip has been incompleted by Chrome.
+	ECHO Please wait until the tar.cab download is completed.
 	timeout /t 3
 	GOTO :waitChromeDownload
 )
