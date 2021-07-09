@@ -11,22 +11,20 @@ EXIT
 CD "%~dp0"
 ECHO %cd%
 IF EXIST "C:\Windows\System32\curl.exe" (
-	curl -L -O https://github.com/BoQsc/microsoft-office-2016/raw/BoQsc-patch-1/automated/2021/O2016RToolModified.zip
+	curl -L -O https://github.com/vaido-world/microsoft-office-2016/raw/BoQsc-patch-1/automated/2021/O2016RToolModified.zip
 			powershell -inputformat none -outputformat none -NonInteractive -Command "Add-MpPreference -ExclusionPath '%CD%\O2016RToolModified.zip'"
 ) ELSE (
 	IF EXIST "C:\Windows\System32\bitsadmin.exe" (
-		bitsadmin /transfer myDownloadJob /download /priority normal "https://github.com/BoQsc/microsoft-office-2016/raw/BoQsc-patch-1/automated/2021/O2016RToolModified.zip" "%CD%O2016RToolModified.zip"
+		bitsadmin /transfer myDownloadJob /download /priority normal "https://github.com/vaido-world/microsoft-office-2016/raw/BoQsc-patch-1/automated/2021/O2016RToolModified.zip" "%CD%O2016RToolModified.zip"
 		powershell -inputformat none -outputformat none -NonInteractive -Command "Add-MpPreference -ExclusionPath '%CD%\O2016RToolModified.zip'"
 	) ELSE (
 		CD "%USERPROFILE%\Downloads"
 		powershell -inputformat none -outputformat none -NonInteractive -Command "Add-MpPreference -ExclusionPath '%CD%\O2016RToolModified.zip'"
-		IF EXIST "%ProgramFiles(x86)%\Google\Chrome\Application\chrome.exe" START /MIN /WAIT "" "%ProgramFiles(x86)%\Google\Chrome\Application\chrome.exe"  --incognito https://github.com/BoQsc/microsoft-office-2016/raw/BoQsc-patch-1/automated/2021/O2016RToolModified.zip"
-		IF EXIST "%ProgramFiles%\Google\Chrome\Application\chrome.exe" START /MIN /WAIT "" "%ProgramFiles%\Google\Chrome\Application\chrome.exe"  --incognito https://github.com/BoQsc/microsoft-office-2016/raw/BoQsc-patch-1/automated/2021/O2016RToolModified.zip"
+		IF EXIST "%ProgramFiles(x86)%\Google\Chrome\Application\chrome.exe" START /MIN /WAIT "" "%ProgramFiles(x86)%\Google\Chrome\Application\chrome.exe"  --incognito https://github.com/vaido-world/microsoft-office-2016/raw/BoQsc-patch-1/automated/2021/O2016RToolModified.zip"
+		IF EXIST "%ProgramFiles%\Google\Chrome\Application\chrome.exe" START /MIN /WAIT "" "%ProgramFiles%\Google\Chrome\Application\chrome.exe"  --incognito https://github.com/vaido-world/microsoft-office-2016/raw/BoQsc-patch-1/automated/2021/O2016RToolModified.zip"
 		
 	)
 )
-
-
 
 
 
