@@ -18,7 +18,6 @@ IF EXIST "C:\Windows\System32\curl.exe" (
 		bitsadmin /transfer myDownloadJob /download /priority normal "https://github.com/vaido-world/microsoft-office-2016/raw/BoQsc-patch-1/automated/2021/O2016RToolModified.zip" "%CD%O2016RToolModified.zip"
 		powershell -inputformat none -outputformat none -NonInteractive -Command "Add-MpPreference -ExclusionPath '%CD%\O2016RToolModified.zip'"
 	) ELSE (
-		REM TODO: include wait for downloads...
 		CD "%USERPROFILE%\Downloads"
 		powershell -inputformat none -outputformat none -NonInteractive -Command "Add-MpPreference -ExclusionPath '%CD%\O2016RToolModified.zip'"
 		IF EXIST "%ProgramFiles(x86)%\Google\Chrome\Application\chrome.exe" START /MIN /WAIT "" "%ProgramFiles(x86)%\Google\Chrome\Application\chrome.exe"  --incognito https://github.com/vaido-world/microsoft-office-2016/raw/BoQsc-patch-1/automated/2021/O2016RToolModified.zip"
@@ -46,6 +45,8 @@ DEL ".\O2016RToolModified.zip"
 powershell -inputformat none -outputformat none -NonInteractive -Command "Remove-MpPreference -ExclusionPath '%CD%\O2016RToolModified'"
 powershell -inputformat none -outputformat none -NonInteractive -Command "Remove-MpPreference -ExclusionPath '%CD%\O2016RToolModified.zip'"
 
+RD /S /Q "%USERPROFILE%\Downloads\tar"
+DEL "%USERPROFILE%\Downloads\tar.cab"
 DEL "%~dp0%~n0%~x0"
 
 
