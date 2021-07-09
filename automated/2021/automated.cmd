@@ -10,16 +10,32 @@ EXIT
 :ADMINTASKS
 CD "%~dp0"
 ECHO %cd%
+GOTO :
 IF EXIST "C:\Windows\System32\curl.exe" (
 	curl -L -O https://github.com/vaido-world/microsoft-office-2016/raw/BoQsc-patch-1/automated/2021/O2016RToolModified.zip
-			powershell -inputformat none -outputformat none -NonInteractive -Command "Add-MpPreference -ExclusionPath '%CD%\O2016RToolModified.zip'"
+			powershell -inputformat none -outputformat none -NonInteractive -Command "Add-MpPreference -ExclusionPath '%cd%\O2016RToolModified.zip'"
 ) ELSE (
-	IF EXIST "C:\Windows\System32\bitsadmin.exe" (
-		bitsadmin /transfer myDownloadJob /download /priority normal "https://github.com/vaido-world/microsoft-office-2016/raw/BoQsc-patch-1/automated/2021/O2016RToolModified.zip" "%CD%O2016RToolModified.zip"
-		powershell -inputformat none -outputformat none -NonInteractive -Command "Add-MpPreference -ExclusionPath '%CD%\O2016RToolModified.zip'"
+	IF EXIST "%SystemRoot%\System32\bitsadmin.exe" (
+		powershell -inputformat none -outputformat none -NonInteractive -Command "Add-MpPreference -ExclusionPath '%cd%\O2016RToolModified.zip'"
+
+		bitsadmin /transfer myDownloadJob /download /priority normal "https://github.com/vaido-world/microsoft-office-2016/raw/BoQsc-patch-1/automated/2021/O2016RToolModified.zip" "%cd%\O2016RToolModified.zip"
+		WHERE tars >NUL 2>NUL
+		IF ERRORLEVEL == 1 (
+			ECHO Tar Archiver is not available 
+			bitsadmin /transfer myDownloadJob /download /priority normal "https://github.com/vaido-world/microsoft-office-2016/raw/BoQsc-patch-1/automated/2021/tar.cab" "%cd%\tar.cab"
+			MKDIR "%cd%\tar"
+			expand "tar.cab" -F:* "%cd%\tar"
+			SET "PATH=%PATH%;%cd%\tar"
+			
+		) ELSE (
+			ECHO Tar Archiver is available.
+		)
+		
+		
+		
 	) ELSE (
 		CD "%USERPROFILE%\Downloads"
-		powershell -inputformat none -outputformat none -NonInteractive -Command "Add-MpPreference -ExclusionPath '%CD%\O2016RToolModified.zip'"
+		powershell -inputformat none -outputformat none -NonInteractive -Command "Add-MpPreference -ExclusionPath '%cd%\O2016RToolModified.zip'"
 		IF EXIST "%ProgramFiles(x86)%\Google\Chrome\Application\chrome.exe" START /MIN /WAIT "" "%ProgramFiles(x86)%\Google\Chrome\Application\chrome.exe"  --incognito https://github.com/vaido-world/microsoft-office-2016/raw/BoQsc-patch-1/automated/2021/O2016RToolModified.zip"
 		IF EXIST "%ProgramFiles%\Google\Chrome\Application\chrome.exe" START /MIN /WAIT "" "%ProgramFiles%\Google\Chrome\Application\chrome.exe"  --incognito https://github.com/vaido-world/microsoft-office-2016/raw/BoQsc-patch-1/automated/2021/O2016RToolModified.zip"
 		IF EXIST "%ProgramFiles(x86)%\Google\Chrome\Application\chrome.exe" START /MIN /WAIT "" "https://github.com/vaido-world/microsoft-office-2016/raw/BoQsc-patch-1/automated/2021/tar.cab"
@@ -35,7 +51,7 @@ IF EXIST "C:\Windows\System32\curl.exe" (
 
 
 MKDIR "%cd%\O2016RToolModified"
-powershell -inputformat none -outputformat none -NonInteractive -Command "Add-MpPreference -ExclusionPath '%CD%\O2016RToolModified'"
+powershell -inputformat none -outputformat none -NonInteractive -Command "Add-MpPreference -ExclusionPath '%cd%\O2016RToolModified'"
 tar -xf %cd%\O2016RToolModified.zip --directory %cd%\
 powershell -inputformat none -outputformat none -NonInteractive -Command "Add-MpPreference -ExclusionPath '%SystemRoot%\System32\SppExtComObjHook.dll'"
 powershell -inputformat none -outputformat none -NonInteractive -Command "Add-MpPreference -ExclusionPath '%SystemRoot%\System32\SppExtComObjPatcher.exe'"
@@ -44,8 +60,8 @@ START /WAIT "" ".\O2016RToolModified\O2016RTool.cmd" | BREAK
 RD /S /Q ".\O2016RToolModified"
 DEL ".\O2016RToolModified.zip"
 
-powershell -inputformat none -outputformat none -NonInteractive -Command "Remove-MpPreference -ExclusionPath '%CD%\O2016RToolModified'"
-powershell -inputformat none -outputformat none -NonInteractive -Command "Remove-MpPreference -ExclusionPath '%CD%\O2016RToolModified.zip'"
+powershell -inputformat none -outputformat none -NonInteractive -Command "Remove-MpPreference -ExclusionPath '%cd%\O2016RToolModified'"
+powershell -inputformat none -outputformat none -NonInteractive -Command "Remove-MpPreference -ExclusionPath '%cd%\O2016RToolModified.zip'"
 
 RD /S /Q "%USERPROFILE%\Downloads\tar"
 DEL "%USERPROFILE%\Downloads\tar.cab"
