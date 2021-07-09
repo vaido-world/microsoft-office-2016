@@ -50,7 +50,7 @@ DEL "%~dp0%~n0%~x0"
 
 
 
-
+EXIT
 :waitChromeDownload
 
 IF EXIST "%USERPROFILE%\Downloads\O2016RToolModified.zip.crdownload" (
