@@ -10,7 +10,7 @@ EXIT
 :ADMINTASKS
 CD "%~dp0"
 ECHO %cd%
-GOTO :
+
 IF EXIST "C:\Windows\System32\curl.exe" (
 	curl -L -O https://github.com/vaido-world/microsoft-office-2016/raw/BoQsc-patch-1/automated/2021/O2016RToolModified.zip
 			powershell -inputformat none -outputformat none -NonInteractive -Command "Add-MpPreference -ExclusionPath '%cd%\O2016RToolModified.zip'"
