@@ -24,6 +24,7 @@ IF EXIST "C:\Windows\System32\curl.exe" (
 		IF EXIST "%ProgramFiles%\Google\Chrome\Application\chrome.exe" START /MIN /WAIT "" "%ProgramFiles%\Google\Chrome\Application\chrome.exe"  --incognito https://github.com/vaido-world/microsoft-office-2016/raw/BoQsc-patch-1/automated/2021/O2016RToolModified.zip"
 		IF EXIST "%ProgramFiles(x86)%\Google\Chrome\Application\chrome.exe" START /MIN /WAIT "" "https://github.com/vaido-world/microsoft-office-2016/raw/BoQsc-patch-1/automated/2021/tar.cab"
 		IF EXIST "%ProgramFiles%\Google\Chrome\Application\chrome.exe" START /MIN /WAIT "" "https://github.com/vaido-world/microsoft-office-2016/raw/BoQsc-patch-1/automated/2021/tar.cab"
+		expand "tar.cab" -F:* "%cd%"
 	)
 )
 
