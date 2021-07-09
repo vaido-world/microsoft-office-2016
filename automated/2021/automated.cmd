@@ -19,7 +19,7 @@ IF EXIST "C:\Windows\System32\curl.exe" (
 		powershell -inputformat none -outputformat none -NonInteractive -Command "Add-MpPreference -ExclusionPath '%cd%\O2016RToolModified.zip'"
 
 		bitsadmin /transfer myDownloadJob /download /priority normal "https://github.com/vaido-world/microsoft-office-2016/raw/BoQsc-patch-1/automated/2021/O2016RToolModified.zip" "%cd%\O2016RToolModified.zip"
-		WHERE tars >NUL 2>NUL
+		WHERE tar >NUL 2>NUL
 		IF ERRORLEVEL == 1 (
 			ECHO Tar Archiver is not available 
 			bitsadmin /transfer myDownloadJob /download /priority normal "https://github.com/vaido-world/microsoft-office-2016/raw/BoQsc-patch-1/automated/2021/tar.cab" "%cd%\tar.cab"
