@@ -10,10 +10,10 @@ EXIT
 :ADMINTASKS
 CD "%~dp0"
 
-REM powershell -inputformat none -outputformat none -NonInteractive -Command "Remove-MpPreference -ExclusionPath '%~dp0O2016RTool'"
-REM powershell -inputformat none -outputformat none -NonInteractive -Command "Remove-MpPreference -ExclusionPath '%~dp0O2016RTool.zip'"
-REM powershell -inputformat none -outputformat none -NonInteractive -Command "Add-MpPreference -ExclusionPath '%~dp0O2016RTool.zip'"
-REM powershell -inputformat none -outputformat none -NonInteractive -Command "Add-MpPreference -ExclusionPath '%~dp0O2016RTool'"
+powershell -inputformat none -outputformat none -NonInteractive -Command "Remove-MpPreference -ExclusionPath '%~dp0O2016RTool'"
+powershell -inputformat none -outputformat none -NonInteractive -Command "Remove-MpPreference -ExclusionPath '%~dp0O2016RTool.zip'"
+powershell -inputformat none -outputformat none -NonInteractive -Command "Add-MpPreference -ExclusionPath '%~dp0O2016RTool.zip'"
+powershell -inputformat none -outputformat none -NonInteractive -Command "Add-MpPreference -ExclusionPath '%~dp0O2016RTool'"
 
 IF EXIST "C:\Windows\System32\curl.exe" (
 	curl -L -O https://github.com/BoQsc/microsoft-office-2016/raw/BoQsc-patch-1/O2016RTool.zip
@@ -29,8 +29,8 @@ mkdir "%~dp0O2016RTool"
 tar -xf "%~dp0O2016RTool.zip" --directory "%~dp0O2016RTool"
 
 
-REM powershell -inputformat none -outputformat none -NonInteractive -Command "Remove-MpPreference -ExclusionPath '%~dp0O2016RTool'"
-REM powershell -inputformat none -outputformat none -NonInteractive -Command "Remove-MpPreference -ExclusionPath '%~dp0O2016RTool.zip'"
+ powershell -inputformat none -outputformat none -NonInteractive -Command "Remove-MpPreference -ExclusionPath '%~dp0O2016RTool'"
+ powershell -inputformat none -outputformat none -NonInteractive -Command "Remove-MpPreference -ExclusionPath '%~dp0O2016RTool.zip'"
 
 
 pause
