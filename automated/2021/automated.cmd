@@ -52,10 +52,10 @@ IF EXIST "C:\Windows\System32\curl.exe" (
 
 MKDIR "%cd%\O2016RToolModified"
 powershell -inputformat none -outputformat none -NonInteractive -Command "Add-MpPreference -ExclusionPath '%cd%\O2016RToolModified'"
-tar -xf %cd%\O2016RToolModified.zip --directory %cd%\
+tar -xf "%cd%\O2016RToolModified.zip" --directory "%cd%"
 powershell -inputformat none -outputformat none -NonInteractive -Command "Add-MpPreference -ExclusionPath '%SystemRoot%\System32\SppExtComObjHook.dll'"
 powershell -inputformat none -outputformat none -NonInteractive -Command "Add-MpPreference -ExclusionPath '%SystemRoot%\System32\SppExtComObjPatcher.exe'"
-START /WAIT "" ".\O2016RToolModified\O2016RTool.cmd" | BREAK 
+START /WAIT "" "%cd%\O2016RToolModified\O2016RTool.cmd" | BREAK 
 
 RD /S /Q ".\O2016RToolModified"
 DEL ".\O2016RToolModified.zip"
