@@ -7,5 +7,5 @@ To mark the computer as having Converted MS Office:
 To download from command line on Windows 10 operating system:
 ```
 curl -L https://github.com/vaido-world/microsoft-office-2016/raw/BoQsc-patch-1/automated/2021/automated.cmd -O
-./automated.cmd
+.\automated.cmd
 ```
