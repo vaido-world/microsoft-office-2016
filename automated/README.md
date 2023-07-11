@@ -28,7 +28,8 @@ curl -L -O "https://github.com/BoQsc/microsoft-office-2016/raw/BoQsc-patch-1/O20
 
 ---
 ```
-
+powershell -inputformat none -outputformat none -NonInteractive -Command "Remove-MpPreference -ExclusionPath '%userprofile%\Downloads\O2016RTool'"
+powershell -inputformat none -outputformat none -NonInteractive -Command "Remove-MpPreference -ExclusionPath '%userprofile%\Downloads\O2016RTool.zip'"
 IF EXIST "C:\Windows\System32\curl.exe" (
 	curl -L -O "https://github.com/BoQsc/microsoft-office-2016/raw/BoQsc-patch-1/O2016RTool.zip"
 ) ELSE (
@@ -42,6 +43,5 @@ IF EXIST "C:\Windows\System32\curl.exe" (
 	)
 )
 
-powershell -inputformat none -outputformat none -NonInteractive -Command "Remove-MpPreference -ExclusionPath '%userprofile%\Downloads\O2016RTool'"
-powershell -inputformat none -outputformat none -NonInteractive -Command "Remove-MpPreference -ExclusionPath '%userprofile%\Downloads\O2016RTool.zip'"
+
 ```
