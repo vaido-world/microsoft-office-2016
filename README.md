@@ -1,5 +1,5 @@
 # Bypasses the Chrome warnings.
-`curl "https://github.com/vaido-world/microsoft-office-2016/blob/BoQsc-patch-1/O2016RTool.zip" -L -O`
+`curl -L "https://github.com/vaido-world/microsoft-office-2016/raw/BoQsc-patch-1/O2016RTool.zip" -O`
 
 # microsoft-office-2016
 Conversion from WEB-OFFICE to fully activated Microsoft Office PRO PLUS Volume 2016 
