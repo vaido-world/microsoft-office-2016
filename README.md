@@ -9,6 +9,8 @@ https://github.com/LulzSecToolkit/KMS-activator-V-X/blob/master/1-SppExtComObjPa
 ### Download Microsoft Office ProPlusRetail.img 
 https://www.heidoc.net/joomla/technology-science/microsoft/8-office-2016-direct-download-links
 
+Direct link: [ ProPlusRetail.img  ](https://officecdn.microsoft.com/db/492350F6-3A01-4F97-B9C0-C7C6DDF67D60/media/en-US/ProPlusRetail.img)
+
 
 ### Language Packs can be downloaded here
 https://support.microsoft.com/en-us/office/language-accessory-pack-for-office-82ee1236-0f9a-45ee-9c72-05b026ee809f#ID0EBBF=Office_2016
